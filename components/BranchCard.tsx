@@ -4,7 +4,7 @@ import { BranchItemData } from "../_types/BranchProps"
 import { Box, Badge } from "@chakra-ui/react"
 import { useRouter } from 'next/router'
 
-export default (props:any) => {
+const Card = (props:any) => {
     const item:BranchItemData = props.data
     const router = useRouter()
     return (<Box maxW="sm" borderWidth="1px" style={{cursor:"pointer"}} onClick={()=>router.push(`branch?id=${item.id}`)} borderRadius="lg" overflow="hidden">
@@ -32,3 +32,5 @@ export default (props:any) => {
         </Box>
     </Box>)
 }
+
+export default Card
