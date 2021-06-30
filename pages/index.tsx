@@ -36,13 +36,13 @@ const Home: NextPage<PropsIndexData> = ({list}) => {
         <Button colorScheme="blue" onClick={addBranch}>Add New Branch</Button>
 
         <div className={styles.grid}>
-          {list.map((item:BranchItemData)=><BranchCard data={item} />)}
+          {list.map((item:BranchItemData)=><BranchCard key={item.id} data={item} />)}
         </div>
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/agilworld/resto-app-nextjs-sequelize"
           target="_blank"
           rel="noopener noreferrer"
         >
