@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build -p $PORT",
     "start": "next start",
     "lint": "next lint"
   },
+  "cacheDirectories": [".next/cache"],
   "dependencies": {
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11",
