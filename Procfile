@@ -1,1 +1,1 @@
-web: npx sequelize db:migrate:all && yarn start
+web: npx sequelize db:migrate && yarn start
