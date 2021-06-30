@@ -1,1 +1,1 @@
-web: npx sequelize db:migrate:all && npm run build
+web: npx sequelize db:migrate:all && yarn start
