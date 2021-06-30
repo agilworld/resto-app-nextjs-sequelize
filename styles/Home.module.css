@@ -17,6 +17,25 @@
   align-items: center;
 }
 
+.content {
+  padding: 5rem 0;
+  width:800px;
+}
+
+.slimcontent {
+  padding: 5rem 0;
+  width:500px;
+}
+
+
+.form {
+  padding:2rem 0rem;
+}
+
+.chakra-form-control {
+  margin-bottom:10px;
+}
+
 .footer {
   width: 100%;
   height: 100px;
@@ -58,6 +77,17 @@
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+  margin-top:1.4rem;
+  margin-bottom: 1rem;
+}
+
+
+.metaDescription {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  margin-top:0.4rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .code {
