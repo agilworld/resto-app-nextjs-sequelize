@@ -5,7 +5,7 @@ const getBaseUrl = () => {
     if( process.env.NODE_ENV==='development') {
         return 'http://localhost:3000/api'
     } else if(process.env.NODE_ENV==='production') {
-        return 'http://localhost:3000/api'
+        return 'https://nextjs-resto-app.herokuapp.com/api'
     }
 }
 
