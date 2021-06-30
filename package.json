@@ -9,7 +9,9 @@
     "lint": "next lint",
     "heroku-postbuild": "npm run build"
   },
-  "cacheDirectories": [".next/cache"],
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "dependencies": {
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11",
@@ -20,14 +22,17 @@
     "framer-motion": "^4",
     "next": "11.0.1",
     "next-connect": "^0.10.1",
+    "next-swagger-doc": "^0.1.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sequelize": "^6.6.4",
     "sequelize-cli": "^6.2.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "swagger-ui-react": "^3.51.0"
   },
   "devDependencies": {
     "@types/react": "17.0.11",
+    "@types/swagger-ui-react": "^3.35.1",
     "autoprefixer": "^10.2.6",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1",

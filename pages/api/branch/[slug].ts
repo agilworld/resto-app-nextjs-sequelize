@@ -21,6 +21,83 @@ interface QueryParams {
   limit?:number;
 }
 
+
+/**
+ * @swagger
+ * info: Branch
+ * /api/branch/[slug]:
+ *   get:
+ *     description: Get single branch
+ *     summary: Single Branch
+ *     responses:
+ *       '200':
+ *         description: Success retrive single data
+ *         content:
+ *            application/json:
+ *               examples:
+ *                  Branch:
+ *                    value:
+ *                      success: true
+ *                      data:
+ *                          name: "branch 1" 
+ *                          open: "09.00" 
+ *                          close: "21.00" 
+ *                          lat: 1.2313131 
+ *                          lng: 103.4213
+ *                          createdAt: (time) 
+ *                          updatedAt: (time) 
+ *                          Meals: [(data meal)]
+ * 
+ *   put:
+ *     description: Update a branch
+ *     summary: Update Branch
+ *     parameters:
+ *     - name: name
+ *       id: name
+ *       description: branch name
+ *     - name: open
+ *       description: open time
+ *     - name: close
+ *       description: closed time
+ *     - name: lat
+ *       description: Latitude coordinate
+ *     - name: lng
+ *       description: Longitude coordinate
+ *     responses:
+ *       '200':
+ *         title: Success
+ *         content:
+ *            application/json:
+ *               examples:
+ *                  Success:
+ *                    value:
+ *                      success: true
+ *                      message: "success"
+ *       '400':
+ *         description: Error reject
+ *         content:
+ *            application/json:
+ *               examples:
+ *                  Has exists:
+ *                    value:
+ *                      success: false
+ *                      error: "Branch name is already exists"
+ *                  Latitude:
+ *                    value:
+ *                      success: false
+ *                      error: "Latitude of Indonesia Country is not valid, it must between -10 to 7"
+ *                  Longitude:
+ *                    value:
+ *                      success: false
+ *                      error: "Longitude of Indonesia Country is not valid, it must between 96 to 141"
+ *   delete:
+ *     description: Delete a branch
+ *     summary: Delete Branch
+ *     responses:
+ *       '200':
+ *         description: Success delete data
+ *                       
+ */
 const handler = nextConnect()
     .get(async (req:NextApiRequest, res:NextApiResponse) => {
         const { slug } = req.query;
