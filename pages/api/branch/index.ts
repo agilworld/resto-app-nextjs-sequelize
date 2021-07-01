@@ -2,6 +2,8 @@ import nextConnect from 'next-connect';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Op, Sequelize } from "sequelize"
 import db from "../../../models/index.js"
+import Cors from 'cors'
+import initMiddleware from '../../../lib/init-middleware'
 
 interface ResponseListData {
   success:boolean;
@@ -20,6 +22,16 @@ interface QueryParams {
   page?:number;
   limit?:number;
 }
+
+
+// Initialize the cors middleware
+const cors = initMiddleware(
+  Cors({
+    // Only allow requests with GET, POST and OPTIONS
+    methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
+  })
+)
+
 
 /**
  * @swagger
@@ -98,6 +110,10 @@ interface QueryParams {
  */
 
 const handler = nextConnect()
+  .use(async (req:NextApiRequest, res:NextApiResponse, next)=>{
+    await cors(req, res)
+    next()
+  })
   .get(async (req:NextApiRequest, res:NextApiResponse) => {
       const params:QueryParams = req.query
       const page = params.hasOwnProperty('page')?params.page:0
